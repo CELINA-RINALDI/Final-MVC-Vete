@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVCVeterinaria.Models.Turno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Agenda de Turnos</h1>
+<p>Buscar por nombre de mascota:</p>
+<form asp-controller="Turno" asp-action="Index">
+    <p>
+       Nombre: <input type="text" name="SearchString" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+<p>
+    <a asp-action="Create">Crear nuevo turno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreMascota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoMascota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Raza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDuenio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreMascota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoMascota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDuenio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
