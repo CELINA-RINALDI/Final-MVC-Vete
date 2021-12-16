@@ -20,7 +20,7 @@ namespace MVCVeterinaria.Models
         [DataType(DataType.Time)]
         public TimeSpan Hora { get; set; } = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, 0);
 
-        [Required(ErrorMessage = "Ingrese un nombre válido"), MaxLength(30)]
+        [Required(ErrorMessage = "El nombre es obligatorio"), MaxLength(30)]
         [DataType(DataType.Text)]
         [Display(Name = "Nombre de su mascota:")]
         public string NombreMascota { get; set; }
@@ -28,20 +28,20 @@ namespace MVCVeterinaria.Models
         [Display(Name = "Tipo de mascota")]
         public TipoMascota TipoMascota { get; set; }
 
-        [Required(ErrorMessage = "Ingrese una raza válida"), MaxLength(30)]
+        [Required(ErrorMessage = "La raza es obligatoria"), MaxLength(30)]
         [DataType(DataType.Text)]
         public string Raza { get; set; }
 
         [Required]
-        [Range(0, 50, ErrorMessage = "Ingrese una edad válido")]
+        [Range(0, 50, ErrorMessage = "Ingrese una edad válida")]
         public int Edad { get; set; }
 
-        [Required(ErrorMessage = "Ingrese un nombre válido"), MaxLength(30)]
+        [Required(ErrorMessage = "El nombre del dueño es obligatorio"), MaxLength(30)]
         [DataType(DataType.Text)]
         [Display(Name = "Nombre del dueño")]
         public string NombreDuenio { get; set; }
 
-        [Required(ErrorMessage = "Ingrese un número de celular válido")]
+        [Required(ErrorMessage = "El celular es obligatorio")]
         [DataType(DataType.PhoneNumber)]
         [Range(1100000000, 1199999999, ErrorMessage = "Ingrese un número de celular válido")]
         public string Celular { get; set; }

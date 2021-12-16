@@ -11,15 +11,15 @@ namespace MVCVeterinaria.Models
         [Key]
         public int MedicoId { get; set; }
 
-        [Required(ErrorMessage = "Ingrese un nombre válido"), MaxLength(30)]
+        [Required(ErrorMessage = "El nombre del médico es obligatorio"), MaxLength(30)]
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "Ingrese un apellido válido"), MaxLength(30)]
+        [Required(ErrorMessage = "El apellido del médico es obligatorio"), MaxLength(30)]
         [DataType(DataType.Text)]
         public string Apellido { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "La matricula es obligatoria")]
         [Range(0, 999, ErrorMessage = "Ingrese un número matricula válido")]
         [Display(Name = "Número de matricula")]
         public int NroMatricula { get; set; }
